@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="2;url=http://localhost/bluemoon/index.php" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bluemoon – Opening...</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #0a0a14;
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* animated blobs */
+        .blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.18;
+            pointer-events: none;
+            animation: bm 10s ease-in-out infinite alternate;
+        }
+
+        .b1 {
+            width: 500px;
+            height: 500px;
+            background: #6366f1;
+            top: -180px;
+            left: -150px;
+        }
+
+        .b2 {
+            width: 400px;
+            height: 400px;
+            background: #ec4899;
+            bottom: -120px;
+            right: -100px;
+            animation-delay: -5s;
+        }
+
+        @keyframes bm {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.12) translate(30px, 20px);
+            }
+        }
+
+        .logo {
+            font-size: 56px;
+            animation: spin 6s linear infinite;
+            filter: drop-shadow(0 0 24px #818cf8);
+        }
+
+        @keyframes spin {
+            0% {
+                filter: drop-shadow(0 0 18px #6366f1);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 32px #ec4899);
+            }
+
+            100% {
+                filter: drop-shadow(0 0 18px #6366f1);
+            }
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #818cf8, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        p {
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        /* spinner ring */
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.08);
+            border-top-color: #6366f1;
+            animation: rotate 0.8s linear infinite;
+        }
+
+        @keyframes rotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .redirect-link {
+            color: #818cf8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 10px 24px;
+            border-radius: 50px;
+            transition: all 0.2s;
+            background: rgba(99, 102, 241, 0.08);
+        }
+
+        .redirect-link:hover {
+            background: rgba(99, 102, 241, 0.2);
+            border-color: rgba(99, 102, 241, 0.6);
+        }
+
+        .note {
+            font-size: 12px;
+            color: #475569;
+            max-width: 320px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+
+    <div class="logo">🌙</div>
+    <h1>BLUE MOON</h1>
+    <p>Opening the full website...</p>
+    <div class="spinner"></div>
+    <a class="redirect-link" href="http://localhost/bluemoon/index.php">
+        Click here if not redirected →
+    </a>
+    <div class="note">
+        Make sure XAMPP is running with Apache &amp; MySQL started before opening this file.
+    </div>
+
+    <script>
+        // Redirect immediately via JS (faster than meta refresh)
+        setTimeout(() => {
+            window.location.href = 'http://localhost/bluemoon/index.php';
+        }, 1800);
+    </script>
+</body>
+
+</html>
